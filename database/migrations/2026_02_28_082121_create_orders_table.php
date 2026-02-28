@@ -18,6 +18,7 @@ return new class extends Migration
             $table->foreignId('user_id')->constrained();
             $table->enum('payment_type',['По карте', 'По номеру телефона']);
             $table->string('date');
+            $table->enum('status', ['Новая', 'Мероприятие назначено', 'Мероприятие завершено']);
         });
     }
 

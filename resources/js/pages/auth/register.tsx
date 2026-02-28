@@ -26,7 +26,7 @@ export default function Register() {
                     <>
                         <div className="grid gap-6">
                             <div className="grid gap-2">
-                                <Label htmlFor="name">Name</Label>
+                                <Label htmlFor="name">Фамилия Имя Отчество</Label>
                                 <Input
                                     id="name"
                                     type="text"
@@ -35,7 +35,7 @@ export default function Register() {
                                     tabIndex={1}
                                     autoComplete="name"
                                     name="name"
-                                    placeholder="Full name"
+                                    placeholder="ФИО"
                                 />
                                 <InputError
                                     message={errors.name}
@@ -44,7 +44,7 @@ export default function Register() {
                             </div>
 
                             <div className="grid gap-2">
-                                <Label htmlFor="email">Email address</Label>
+                                <Label htmlFor="email">Email адрес</Label>
                                 <Input
                                     id="email"
                                     type="email"
@@ -58,7 +58,35 @@ export default function Register() {
                             </div>
 
                             <div className="grid gap-2">
-                                <Label htmlFor="password">Password</Label>
+                                <Label htmlFor="phone">Номер телефона</Label>
+                                <Input
+                                    id="phone"
+                                    type="input"
+                                    required
+                                    tabIndex={2}
+                                    autoComplete="phone"
+                                    name="phone"
+                                    placeholder="+7(***) ***-**-**"
+                                />
+                                <InputError message={errors.phone} />
+                            </div>
+
+                            <div className="grid gap-2">
+                                <Label htmlFor="login">Логин</Label>
+                                <Input
+                                    id="login"
+                                    type="input"
+                                    required
+                                    tabIndex={2}
+                                    autoComplete="login"
+                                    name="login"
+                                    placeholder="login"
+                                />
+                                <InputError message={errors.login} />
+                            </div>
+
+                            <div className="grid gap-2">
+                                <Label htmlFor="password">Пароль</Label>
                                 <Input
                                     id="password"
                                     type="password"
@@ -73,7 +101,7 @@ export default function Register() {
 
                             <div className="grid gap-2">
                                 <Label htmlFor="password_confirmation">
-                                    Confirm password
+                                    Подтвердите пароль
                                 </Label>
                                 <Input
                                     id="password_confirmation"
@@ -96,14 +124,14 @@ export default function Register() {
                                 data-test="register-user-button"
                             >
                                 {processing && <Spinner />}
-                                Create account
+                                Создать аккаунт
                             </Button>
                         </div>
 
                         <div className="text-center text-sm text-muted-foreground">
-                            Already have an account?{' '}
+                            Уже есть аккаунт?{' '}
                             <TextLink href={login()} tabIndex={6}>
-                                Log in
+                               Войти
                             </TextLink>
                         </div>
                     </>

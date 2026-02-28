@@ -22,6 +22,9 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'login',
+        'phone',
+        'type'
     ];
 
     /**
@@ -35,6 +38,10 @@ class User extends Authenticatable
         'two_factor_recovery_codes',
         'remember_token',
     ];
+    protected function isAdmin ($id) {
+        $type = User::find($id)->type;
+        return $type=='Admin'?true:false;
+    }
 
     /**
      * Get the attributes that should be cast.

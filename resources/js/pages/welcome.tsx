@@ -19,7 +19,13 @@ export default function Welcome({
             </Head>
             <div className="flex min-h-screen flex-col items-center bg-[#FDFDFC] p-6 text-[#1b1b18] lg:justify-center lg:p-8 dark:bg-[#0a0a0a]">
                 <header className="mb-6 w-full max-w-[335px] text-sm not-has-[nav]:hidden lg:max-w-4xl">
-                    <nav className="flex items-center justify-end gap-4">
+                    
+                </header>
+                <div className="flex w-full items-center justify-center opacity-100 transition-opacity duration-750 lg:grow starting:opacity-0">
+                    <main className="flex w-full max-w-[335px] flex-col-reverse lg:max-w-4xl lg:flex-row">
+                        <h1 className='text-[#1b1b18]'>Добро пожаловать!</h1>
+                        <div className='text-[#1b1b18]'>Концеренция.РФ</div>
+                        <div className="flex items-center justify-end gap-4">
                         {auth.user ? (
                             <Link
                                 href={dashboard()}
@@ -45,12 +51,7 @@ export default function Welcome({
                                 )}
                             </>
                         )}
-                    </nav>
-                </header>
-                <div className="flex w-full items-center justify-center opacity-100 transition-opacity duration-750 lg:grow starting:opacity-0">
-                    <main className="flex w-full max-w-[335px] flex-col-reverse lg:max-w-4xl lg:flex-row">
-                        <h1>Добро пожаловать!</h1>
-                        <div>Концеренция.РФ</div>
+                    </div>
                     </main>
                 </div>
                 <div className="hidden h-14.5 lg:block"></div>

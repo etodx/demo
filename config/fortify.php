@@ -45,8 +45,11 @@ return [
     |
     */
 
-    'username' => 'email',
-
+    'username' => 'login',
+    'validate'=>[
+        'login'=>'required|string',
+        'password'=>'required|string',
+    ],
     'email' => 'email',
 
     /*

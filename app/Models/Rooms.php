@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Models;
-
+use App\Models\Orders;
 use Illuminate\Database\Eloquent\Model;
 
 class Rooms extends Model
@@ -21,4 +21,5 @@ class Rooms extends Model
     protected function showAll () {
         return Rooms::all();
     }
+
 }

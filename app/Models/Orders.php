@@ -3,6 +3,8 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Rooms; 
+use App\Models\Users;
 
 class Orders extends Model
 {
@@ -15,7 +17,8 @@ class Orders extends Model
     ];
 
     protected $hidden = [
-        'id'
+        'id',
+        'type'
     ];
 
     protected function show ($id) {
@@ -23,5 +26,11 @@ class Orders extends Model
     }
     protected function showAll ($id) {
         return Orders::select()->where('id', $id)->get();
+    }
+    protected function room(){
+        return $this->belongsTo(Room::class, 'id', 'room_id');
+    }
+    protected function user(){
+        return $this->belongsTo(User::class, 'id', 'user_id');
     }
 }
